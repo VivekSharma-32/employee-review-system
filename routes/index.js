@@ -1,17 +1,15 @@
-
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const passport = require('passport');
+const passport = require("passport");
 
-const userController = require('../controllers/user_controller');
+const userController = require("../controllers/user_controller");
 
-router.get('/', passport.checkAuthentication, userController.home);
+router.get("/", passport.checkAuthentication, userController.home);
 
-router.use('/users', require('./user'));
+router.use("/users", require("./user"));
 
-router.use('/admin', require('./admin'));
+router.use("/admin", require("./admin"));
 
-router.use('/reviews', require('./review'));
-
+router.use("/reviews", require("./review"));
 
 module.exports = router;
